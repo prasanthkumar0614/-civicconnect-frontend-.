@@ -1,0 +1,326 @@
+:root {
+  /* Color — civic navy/teal, municipal-signage amber for priority/alerts */
+  --ink: #142B33;
+  --ink-soft: #3C5560;
+  --paper: #F3F6F5;
+  --surface: #FFFFFF;
+  --line: #D8E0DE;
+  --line-strong: #AFC0BC;
+  --teal: #0F5C5C;
+  --teal-deep: #0A3D3D;
+  --amber: #C97E1F;
+  --amber-soft: #F3E2C4;
+  --red: #A6402B;
+  --red-soft: #F3DAD2;
+  --green: #2F6B4F;
+  --green-soft: #DCEAE1;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-tag: "JetBrains Mono", monospace;
+
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--surface);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+}
+
+p { line-height: 1.55; color: var(--ink-soft); }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+/* --- App chrome --- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+  background: var(--teal-deep);
+  color: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+}
+
+.brand-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  background: var(--amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-tag);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--teal-deep);
+}
+
+.screen {
+  flex: 1;
+  padding: 24px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.eyebrow {
+  font-family: var(--font-tag);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* --- Asset tag: signature element, styled like a stamped utility ID --- */
+
+.asset-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-tag);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--teal-deep);
+  background: var(--surface);
+  border: 1.5px solid var(--teal-deep);
+  border-radius: 3px;
+  padding: 4px 9px 4px 7px;
+  position: relative;
+}
+
+.asset-tag::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal-deep);
+  opacity: 0.35;
+}
+
+.asset-tag.large {
+  font-size: 20px;
+  padding: 8px 16px 8px 12px;
+  border-width: 2px;
+}
+
+.asset-tag.large::before {
+  width: 7px;
+  height: 7px;
+}
+
+/* --- Form controls --- */
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.field select,
+.field input[type="text"],
+.field textarea {
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 11px 12px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.field select:focus,
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+  border-color: var(--teal);
+}
+
+.field textarea { resize: vertical; min-height: 90px; }
+
+.hint { font-size: 12px; color: var(--ink-soft); }
+.error-text { font-size: 12px; color: var(--red); font-weight: 600; }
+
+/* --- Buttons --- */
+
+.btn-primary {
+  background: var(--teal-deep);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 13px 18px;
+  font-weight: 600;
+  font-size: 15px;
+  width: 100%;
+}
+
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--teal-deep);
+  border: 1.5px solid var(--teal-deep);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  font-weight: 600;
+  font-size: 15px;
+  width: 100%;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 4px 0;
+  text-align: left;
+}
+
+/* --- Cards / lists --- */
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* --- Status badges --- */
+
+.status-badge {
+  font-family: var(--font-tag);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-open { background: var(--amber-soft); color: var(--amber); }
+.status-in_progress { background: #DCE7F3; color: #2A5B8C; }
+.status-resolved { background: var(--green-soft); color: var(--green); }
+.status-closed { background: var(--line); color: var(--ink-soft); }
+
+.priority-dot {
+  width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+}
+.priority-high { background: var(--red); }
+.priority-medium { background: var(--amber); }
+.priority-low { background: var(--green); }
+
+/* --- Bottom nav --- */
+
+.bottom-nav {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.bottom-nav button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 14px 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.bottom-nav button.active { color: var(--teal-deep); }
+.bottom-nav button .dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--amber); opacity: 0;
+}
+.bottom-nav button.active .dot { opacity: 1; }
+
+/* --- Stepper --- */
+
+.stepper-dots {
+  display: flex;
+  gap: 6px;
+}
+.stepper-dots span {
+  height: 3px;
+  flex: 1;
+  border-radius: 2px;
+  background: var(--line);
+}
+.stepper-dots span.done { background: var(--teal); }
+
+/* --- Empty state --- */
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-soft);
+}
+.empty-state h3 { margin-bottom: 6px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .card, .btn-primary { transition: transform 0.12s ease, opacity 0.12s ease; }
+  .btn-primary:active { transform: scale(0.98); }
+}
