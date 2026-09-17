@@ -12,8 +12,8 @@ export default function Register({ onRegistered, onGoLogin }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!form.username.trim() || !form.email.trim() || form.password.length < 8) {
-      setError("Fill in a username, email, and a password of at least 8 characters.");
+    if (!form.username.trim() || form.password.length < 8) {
+      setError("Fill in a username and a password of at least 8 characters.");
       return;
     }
     setError("");
@@ -42,7 +42,7 @@ export default function Register({ onRegistered, onGoLogin }) {
           <input id="reg-username" type="text" value={form.username} onChange={(e) => update("username", e.target.value)} />
         </div>
         <div className="field">
-          <label htmlFor="reg-email">Email</label>
+          <label htmlFor="reg-email">Email(optional)</label>
           <input id="reg-email" type="text" value={form.email} onChange={(e) => update("email", e.target.value)} />
         </div>
         <div className="field">
