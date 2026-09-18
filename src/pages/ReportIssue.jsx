@@ -154,10 +154,22 @@ export default function ReportIssue({ onSubmitted }) {
         </div>
       )}
 
-      {step === 2 && selectedAsset && (
+            {step === 2 && selectedAsset && (
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div className="card-row">
             <AssetTag id={selectedAsset.asset_id} large />
+          </div>
+
+          <div className="field">
+            <label htmlFor="description">What's wrong?</label>
+            <textarea
+              id="description"
+              rows={4}
+              placeholder="e.g. Light has been off for 3 nights"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            {descError && <p className="error-text">{descError}</p>}
           </div>
 
           <div className="field">
