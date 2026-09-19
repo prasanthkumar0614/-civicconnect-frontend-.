@@ -112,10 +112,19 @@ export default function ReportIssue({ onSubmitted }) {
               ))}
             </select>
           )}
-          {areaPath.length > 0 && (
-            <p className="hint">
-              {areaPath.length} level{areaPath.length > 1 ? "s" : ""} selected — keep narrowing down to your ward.
-            </p>
+                    {areaPath.length > 0 && (
+            <>
+              <p className="hint">
+                {areaPath.length} level{areaPath.length > 1 ? "s" : ""} selected — keep narrowing down to your ward.
+              </p>
+              <button
+                type="button"
+                className="btn-text"
+                onClick={() => setAreaPath(areaPath.slice(0, -1))}
+              >
+                ← Back to previous level
+              </button>
+            </>
           )}
         </div>
       )}
