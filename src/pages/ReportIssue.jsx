@@ -11,7 +11,7 @@ export default function ReportIssue({ onSubmitted }) {
   const [areaPath, setAreaPath] = useState([]); // drill-down selections
   const [selectedAreaId, setSelectedAreaId] = useState(null);
 
-  const [assets, setAssets] = useState([]);
+  const [assets, setAssets] = useState(null);
   const [selectedAsset, setSelectedAsset] = useState(null);
 
   const [description, setDescription] = useState("");
@@ -25,8 +25,9 @@ export default function ReportIssue({ onSubmitted }) {
     api.areaTree().then(setAreaTree).catch(() => setAreaTree([]));
   }, []);
 
-  useEffect(() => {
+    useEffect(() => {
     if (selectedAreaId) {
+      setAssets(null); // reset to "loading" state each time a new area is picked
       api.assetsForArea(selectedAreaId).then(setAssets).catch(() => setAssets([]));
     }
   }, [selectedAreaId]);
@@ -129,10 +130,12 @@ export default function ReportIssue({ onSubmitted }) {
         </div>
       )}
 
-      {step === 1 && (
+            {step === 1 && (
         <div className="field">
           <label>Select the asset with the problem</label>
-          {assets.length === 0 ? (
+          {assets === null ? (
+            <p className="hint">Loading assets…</p>
+          ) : assets.length === 0 ? (
             <p className="hint">No registered assets found in this area yet.</p>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
