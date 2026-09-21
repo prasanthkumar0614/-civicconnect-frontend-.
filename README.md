@@ -6,7 +6,7 @@ The citizen-facing web app for **CivicConnect**. Report a problem with a public 
 
 ## Features
 
-- Cascading area picker (District → Mandal → Village → Ward)
+- Cascading area picker (District → Mandal → Village → Ward), backed by real government administrative data across the entire state
 - Asset selection by real, stamped-ID-style Asset Tags (e.g. `SL-030`)
 - Photo and video attachments
 - Automatic acknowledgment on submission
@@ -30,5 +30,3 @@ Set `VITE_API_BASE_URL` in a `.env` file pointing at the backend API.
 
 **Sodima Naga Prasanth Kumar**
 B.Tech Electronics & Communication Engineering, Pace Institute of Technology and Sciences, Ongole
-📍 Darsi, Andhra Pradesh
-
