@@ -4,7 +4,7 @@ The citizen-facing web application for **CivicConnect**, an AI-powered civic iss
 
 ## Live Service
 
-- **Citizen app:** (your Vercel URL)
+- **Citizen app:** (* Citizen app: https://civicconnect-orpin.vercel.app/)
 - **Backend API:** https://civicconnect-p3mq.onrender.com
 
 ## Features
