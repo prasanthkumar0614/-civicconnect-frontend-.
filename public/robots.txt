@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://civicconnect-orpin.vercel.app/sitemap.xml
