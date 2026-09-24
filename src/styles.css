@@ -15,9 +15,9 @@
   --green: #2F6B4F;
   --green-soft: #DCEAE1;
 
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-tag: "JetBrains Mono", monospace;
+  --font-display: Arial, sans-serif;
+  --font-body: Arial, sans-serif;
+  --font-tag: "Courier New", monospace;
 
   --radius: 6px;
 }
