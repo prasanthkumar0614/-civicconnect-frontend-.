@@ -269,11 +269,6 @@ input, textarea, select {
 /* --- Bottom nav --- */
 
 .bottom-nav {
-  display: flex;
-  border-top: 1px solid var(--line);
-  background: var(--surface);
-}
-.bottom-nav {
   position: fixed;
   bottom: 0;
   left: 50%;
@@ -286,12 +281,41 @@ input, textarea, select {
   z-index: 100;
 }
 
-.bottom-nav button.active { color: var(--teal-deep); }
-.bottom-nav button .dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--amber); opacity: 0;
+.bottom-nav button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 10px 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
 }
-.bottom-nav button.active .dot { opacity: 1; }
+
+.bottom-nav button .nav-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.bottom-nav button.active {
+  color: var(--teal-deep);
+}
+
+.bottom-nav button .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+  opacity: 0;
+}
+
+.bottom-nav button.active .dot {
+  opacity: 1;
+}
 
 /* --- Stepper --- */
 
