@@ -30,7 +30,9 @@ export default function Login({ onLoggedIn, onGoRegister }) {
     <div className="screen">
       <div style={{ marginTop: 24 }}>
         <p className="eyebrow">CivicConnect</p>
-        <h1 style={{ fontSize: 26, marginTop: 6 }}>Report it. Track it. Get it fixed.</h1>
+        <h1 style={{ fontSize: 26, marginTop: 6 }}>
+  Report Civic Issues. Track Them. Get Them Fixed.
+</h1>
         <p style={{ marginTop: 8 }}>
           Sign in to report a problem with a street light, water pump, or other public asset in your area.
         </p>
