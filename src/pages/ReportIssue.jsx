@@ -87,7 +87,7 @@ export default function ReportIssue({ onSubmitted }) {
     <div className="screen">
       <div>
         <p className="eyebrow">New report</p>
-        <h1 style={{ fontSize: 22, marginTop: 6 }}>{STEPS[step]}</h1>
+        <h1 style={{ fontSize: 22, marginTop: 6 }}>Report a Civic Issue</h1>
       </div>
 
       <div className="stepper-dots" aria-hidden="true">
