@@ -269,13 +269,10 @@ input, textarea, select {
 /* --- Bottom nav --- */
 
 .bottom-nav {
-  position: sticky;
-  bottom: 0;
   display: flex;
   border-top: 1px solid var(--line);
   background: var(--surface);
 }
-
 .bottom-nav button {
   flex: 1;
   background: none;
