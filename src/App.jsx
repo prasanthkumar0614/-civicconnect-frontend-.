@@ -71,22 +71,22 @@ export default function App() {
 
       {!openIssueId && !justSubmitted && (
         <nav className="bottom-nav">
-          <button
-            className={tab === "report" ? "active" : ""}
-            onClick={() => setTab("report")}
-          >
-            <span className="dot" />
-            Report
-          </button>
+  <button
+    className={tab === "report" ? "active" : ""}
+    onClick={() => setTab("report")}
+  >
+    <span className="nav-icon">＋</span>
+    Report Issue
+  </button>
 
-          <button
-            className={tab === "mine" ? "active" : ""}
-            onClick={() => setTab("mine")}
-          >
-            <span className="dot" />
-            My reports
-          </button>
-        </nav>
+  <button
+    className={tab === "mine" ? "active" : ""}
+    onClick={() => setTab("mine")}
+  >
+    <span className="nav-icon">☰</span>
+    My Complaints
+  </button>
+</nav>
       )}
     </>
   );
