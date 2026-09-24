@@ -95,7 +95,7 @@ input, textarea, select {
   font-family: var(--font-tag);
   font-size: 12px;
   font-weight: 700;
-  color: var(--teal-deep);
+  color: #142B33;
 }
 
 .screen {
